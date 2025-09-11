@@ -2,7 +2,7 @@ package quizapp;
 
 import java.util.ArrayList;
 
-public abstract class Question implements IQuestion {
+public class Question implements IQuestion {
 
     private String questionText;
     private ArrayList<QuestionOption> options = new ArrayList<>();
@@ -13,6 +13,10 @@ public abstract class Question implements IQuestion {
     private static final char QUESTION_MARK = '?';
 
     private int selectedQuestionOptionIndex = -1;
+
+    public Question(String questionText){
+        setQuestionText(questionText);
+    }
 
 
     public String getQuestionText() {
@@ -66,5 +70,31 @@ public abstract class Question implements IQuestion {
     @Override
     public boolean isCorrectOption() {
         return options.get(selectedQuestionOptionIndex).isCorrect();
+    }
+
+
+    public String getUserResponse(String response) {
+        StringBuilder feedback = new StringBuilder();
+
+        feedback.delete(0, feedback.length());
+        int option = (response.trim().charAt(0)) - 65;
+
+        try {
+            selectQuestionOption(option);
+            feedback.append("Your answer was ");
+            feedback.append(isCorrectOption() ? "correct" : "incorrect");
+        }
+        catch (Exception e) {
+
+            for(int i = 0; i < options.size(); i++){
+                if(!options.get(i).isCorrect()){
+                    selectQuestionOption(i);
+                    break;
+                }
+            }
+
+            feedback.append("You entered an invalid answer");
+        }
+        return feedback.toString();
     }
 }

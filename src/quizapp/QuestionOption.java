@@ -1,9 +1,10 @@
 package quizapp;
 
-public abstract class QuestionOption {
+public class QuestionOption {
 
     private String optionText;
     private boolean correct;
+
 
     public QuestionOption(String optionText) {
         setOptionText(optionText);

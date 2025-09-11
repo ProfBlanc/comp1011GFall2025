@@ -2,7 +2,7 @@ package quizapp;
 
 public interface IQuiz {
 
-    void nextQuestion();
+    Question nextQuestion();
     boolean hasNextQuestion();
     void quizOver();
 }
