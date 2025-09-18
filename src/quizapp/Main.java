@@ -24,6 +24,6 @@ public class Main {
 
         }
 
-        System.out.println(String.format("You scored %.0f out of %d\n", quiz.getScore(), quiz.getQuestions().size()));
+        System.out.println(String.format("You scored %.0f out of %d\n ", quiz.getScore(), quiz.getQuestions().size()));
     }
 }
