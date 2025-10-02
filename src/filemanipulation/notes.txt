@@ -1,0 +1,26 @@
+We are creating a Music App Database
+
+Were we will store data about music
+
+-Song
+-Artist
+-Genre
+-Album
+-Playlist
+-Lyrics
+
+Playlist is a collection of songs
+Playlist<Songs>? What kind of Collection
+
+Album
+    Name
+    Cover
+
+Song
+    Title
+    Artist
+    Genre
+    Album
+    Lyrics: file_location of lyrics
+
+https://i.pinimg.com/736x/5a/ae/4d/5aae4dc65e97e9c4bc106001f25f7812.jpg
